@@ -10,7 +10,10 @@
 
             
 
-                <form class="mt-10 " method="POST">
+                <form action="/login" method="POST" class="mt-10 " method="POST">
+                    <% if(messages.error) {%>
+                        <span class="text-red-500 text-small"><%= messages.error %> </span>
+                    <% } %>
                     <!-- Email Input -->
                     <label for="email" class="block text-xs font-semibold text-gray-600 uppercase">E-mail</label>
                     <input id="email" type="email" name="email" placeholder="e-mail address" autocomplete="email"

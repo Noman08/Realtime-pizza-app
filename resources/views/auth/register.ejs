@@ -10,10 +10,13 @@
 
 
 
-                <form class="mt-10" method="POST">
+                <form action="/register" method="POST" class="mt-10" method="POST">
+                    <% if(messages.error) {%>
+                    <span class="text-red-500 text-small"><%= messages.error %> </span>
+                    <% } %>
                     <!-- Email Input -->
                     <label for="username" class="block text-xs font-semibold text-gray-600 uppercase mt-2">Name</label>
-                    <input id="username" type="text" name="username" placeholder="Name" autocomplete="name"
+                    <input id="username" type="text" name="name" placeholder="Name" autocomplete="name"
                         class="block w-full py-3 px-1 mt-2 
                         text-gray-800 appearance-none 
                         border-b-2 border-gray-100
