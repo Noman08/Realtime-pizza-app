@@ -1,5 +1,8 @@
 import axios from 'axios'
 import  Noty from 'noty'
+import { initAdmin } from './admin'
+
+
 
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
@@ -16,7 +19,7 @@ function updateCart(pizza){
     }).catch(err => {
         new Noty({
             type: 'error',
-            timeout: 1000,
+            timeout: 1200,
             text: 'Something went wrong',
             progressBar: false,
         }).show();
@@ -32,3 +35,14 @@ addToCart.forEach((btn) => {
         //console.log(pizza)
     })
 })
+
+// Rimove alert message after X second
+const alertMsg = document.querySelector('#success-alert')
+ if(alertMsg) {
+     setTimeout(() => {
+         alertMsg.remove()
+
+     }, 2000)
+ }
+
+initAdmin()

@@ -1,5 +1,5 @@
 <section class="hero py-16" >
-    <dev class="container mx-auto flex items-center justify-between">
+    <dev class="container mx-auto flex items-center justify-between px-12">
 
         <dev class="w-1/2">
             <h6 class="text-lg"><em>Are you hungry?</em></h6>
@@ -15,7 +15,7 @@
 
     </dev>
 </section>
-<section class="menu container mx-auto py-8">
+<section class="menu container mx-auto py-8 px-12">
     <h1 class="text-xl font-bold mb-8">All Pizzas</h1>
     <div class="grid grid-cols-4 gap-x-12 gap-y-16">
         <% pizzas.forEach(function(pizza){ %>
@@ -25,10 +25,10 @@
                     <h2 class="mb-4 text-lg"> <%= pizza.name%></h2>
                     <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= pizza.size%></span>
                     <div class="flex items-center justify-around mt-6">
-                        <span class="font-bold tex-lg ml-8">$<%= pizza.price %></span>
-                        <button data-pizza="<%= JSON.stringify(pizza)%>" class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                        <span class="font-bold tex-lg ml-4">$<%= pizza.price %></span>
+                        <button data-pizza="<%= JSON.stringify(pizza)%>" class="add-to-cart py-1 px-4 rounded-full flex items-center font-bold">
                             <span>+</span>
-                            <span class="ml-4">Add</span>
+                            <span class="ml-3">Add</span>
                         </button>
                     </div>
                 </div>
