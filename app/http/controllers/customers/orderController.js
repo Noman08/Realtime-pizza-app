@@ -35,7 +35,17 @@ function orderController () {
             res.header('Cache-Control', 'no-store')
             res.render('customers/orders', { orders: orders , moment:moment })
             //console.log(orders)
+        },
+        async show(req, res) {
+            const order = await Order.findById(req.params.id)
+            // Authorize user
+            if(req.user._id.toString === order.customerId.toString) {
+                res.render('customers/singleOrder', { order})
+            } 
+
+            res.redirect('/')
         }
+
     }
 }
 
