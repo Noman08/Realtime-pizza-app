@@ -5,5 +5,4 @@ function auth(req, res, next) {
     return res.redirect('/login')
 }
 
-
 module.exports = auth
